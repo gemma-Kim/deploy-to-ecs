@@ -23,7 +23,7 @@ permissions:
 jobs:
   deploy-to-main:
     runs-on: ubuntu-latest
-    if:  github.ref_name == 'main'
+    if: github.ref_name == 'main'
     environment: production
     steps:
       - uses: actions/checkout@v3
