@@ -1,0 +1,12 @@
+FROM node:14.17.6
+
+WORKDIR /usr/src/app
+ENV NODE_ENV=dev
+
+COPY package.json package-lock.json tsconfig.json tsconfig.build.json ./
+COPY src ./src
+
+RUN npm install && npm run build
+
+EXPOSE 3000
+CMD [ "node", "dist/src/main.js" ]
