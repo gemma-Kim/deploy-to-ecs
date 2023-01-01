@@ -21,7 +21,8 @@ on:
 #   contents: read
 
 jobs:
-  deploy-to-production:
+  build:
+    name: deploy-to-production
     runs-on: ubuntu-latest
     if: github.ref_name == 'main'
     environment: production
